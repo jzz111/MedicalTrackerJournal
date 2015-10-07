@@ -1,9 +1,10 @@
 package net.jghost.medicaltrackerjournal;
 
+import android.app.ListActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends ListActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
