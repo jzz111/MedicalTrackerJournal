@@ -1,5 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="@dimen/listview_header"
+    android:orientation="horizontal">
 
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="@dimen/listview_header"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:foregroundGravity="center_horizontal">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/ic_event"
+            android:background="@mipmap/ic_event_black_18dp"
+            android:layout_gravity="center_horizontal"
+            android:alpha="@dimen/icon_faded"
+            android:contentDescription="@string/ic_desc_event" />
+
+        <TextView
+            android:layout_width="@dimen/text_event_date"
+            android:layout_height="@dimen/text_event_date"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/text_default_date"
+            android:id="@+id/event_date"
+            android:gravity="center_vertical|center_horizontal"
+            android:textStyle="bold"
+            android:typeface="sans"
+            android:layout_centerHorizontal="true"
+            android:layout_alignLeft="@+id/ic_event"
+            android:layout_alignRight="@+id/ic_event"
+            android:layout_alignBottom="@+id/ic_event"
+            android:layout_alignTop="@+id/ic_event"
+            android:paddingTop="@dimen/text_listview_date_padding" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/text_default_day_of_week"
+            android:id="@+id/event_day_of_week"
+            android:layout_alignParentBottom="true"
+            android:layout_above="@+id/ic_event"
+            android:textStyle="bold"
+            android:typeface="sans"
+            android:layout_alignParentRight="false"
+            android:layout_alignParentLeft="false"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></RelativeLayout>
 </LinearLayout>

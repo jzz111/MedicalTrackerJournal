@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Medical Tracker Journal</string>
     <string name="NO_JOURNAL_ENTRY">You currently have no journal entries.</string>
+    <string name="ic_desc_event">Event Icon</string>
+    <string name="text_default_date">1</string>
+    <string name="text_default_day_of_week">Mon</string>
 </resources>
