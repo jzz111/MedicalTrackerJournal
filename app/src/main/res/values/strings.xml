@@ -4,4 +4,9 @@
     <string name="ic_desc_event">Event Icon</string>
     <string name="text_default_date">1</string>
     <string name="text_default_day_of_week">Mon</string>
+    <string name="text_default_title">Default Title</string>
+    <string name="icon_faded">.3</string>
+    <string name="text_faded">.8</string>
+    <string name="text_default_month">September 2000</string>
+    <string name="text_default_details">Jibber jabber random text for the giggles to fill up more space for testing and more and more and more and more</string>
 </resources>
