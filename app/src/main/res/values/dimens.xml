@@ -10,4 +10,5 @@
     <dimen name="text_listview_date_padding">10dp</dimen>
     <dimen name="listview_month_padding">5dp</dimen>
     <dimen name="text_listview_preview_cellheight">40sp</dimen>
+    <dimen name="listview_bottom_margin">20dp</dimen>
 </resources>
