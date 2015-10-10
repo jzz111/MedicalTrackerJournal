@@ -3,17 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="net.jghost.medicaltrackerjournal.MainActivity"
+    tools:context="net.jghost.medicaltrackerjournal.activity.MainActivity"
     android:orientation="vertical">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/NO_JOURNAL_ENTRY"
-        android:id="@android:id/empty"
-        android:enabled="true"
-        android:textColor="@android:color/tertiary_text_light" />
 
     <ListView
         android:layout_width="match_parent"
