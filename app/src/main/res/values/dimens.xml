@@ -6,7 +6,7 @@
     <dimen name="text_event_date_height">45sp</dimen>
     <dimen name="text_listview_title_cellheight">40sp</dimen>
     <dimen name="text_listview_title_size">30sp</dimen>
-    <dimen name="listview_header">120dp</dimen>
+    <dimen name="listview_header">100dp</dimen>
     <dimen name="text_listview_date_padding">10dp</dimen>
     <dimen name="listview_month_padding">5dp</dimen>
     <dimen name="text_listview_preview_cellheight">40sp</dimen>
