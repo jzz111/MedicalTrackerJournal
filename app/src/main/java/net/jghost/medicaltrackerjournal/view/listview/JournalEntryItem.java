@@ -9,7 +9,7 @@ import java.util.Calendar;
 /**
  * View model for a journal entry in list view.
  */
-public class JournalEntryItem implements ListviewItem, Comparable<ListviewItem> {
+public class JournalEntryItem implements ListviewItem {
 	private String title;
 	private String details;
 	private Calendar date;
@@ -43,6 +43,7 @@ public class JournalEntryItem implements ListviewItem, Comparable<ListviewItem> 
 		return date;
 	}
 
+	@Override
 	public void setDate(Calendar date) {
 		this.date = date;
 	}
@@ -50,7 +51,7 @@ public class JournalEntryItem implements ListviewItem, Comparable<ListviewItem> 
 	@Override
 	public int compareTo(ListviewItem another) {
 		if (another instanceof JournalEntryItem) {
-			return date.compareTo(((JournalEntry)another).getDate());
+			return date.compareTo(another.getDate());
 		} else {
 			if (Integer.compare(date.get(Calendar.YEAR), another.getDate().get(Calendar.YEAR)) == 0) {
 				return Integer.compare(date.get(Calendar.MONTH), another.getDate().get(Calendar.MONTH));

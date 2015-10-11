@@ -11,6 +11,7 @@ import android.widget.TextView;
 import net.jghost.medicaltrackerjournal.Constants;
 import net.jghost.medicaltrackerjournal.R;
 import net.jghost.medicaltrackerjournal.view.listview.JournalEntryItem;
+import net.jghost.medicaltrackerjournal.view.listview.ListviewItem;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -22,13 +23,13 @@ import java.util.Map;
 /**
  * Adapter to convert a journal entry to a preview layout.
  */
-public class JournalEntryPreviewAdapter extends ArrayAdapter<JournalEntryItem> {
+public class JournalEntryPreviewAdapter extends ArrayAdapter<ListviewItem> {
     private final Context context;
-    private final List<JournalEntryItem> data;
+    private final List<ListviewItem> data;
 
-	private Map<String, List<JournalEntryItem>> cached_data;
+	private Map<String, List<ListviewItem>> cached_data;
 
-    public JournalEntryPreviewAdapter(Context context, int resource, List<JournalEntryItem> data) {
+    public JournalEntryPreviewAdapter(Context context, int resource, List<ListviewItem> data) {
         super(context, resource, data);
         this.context = context;
         this.data = data;
@@ -63,7 +64,7 @@ public class JournalEntryPreviewAdapter extends ArrayAdapter<JournalEntryItem> {
 
 		switch(rowType) {
 			case Constants.LISTVIEW_ENTRY_TYPE_ITEM:
-				JournalEntryItem entry = data.get(position);
+				JournalEntryItem entry = (JournalEntryItem) data.get(position);
 				TextView date = (TextView) convertView.findViewById(R.id.event_date);
 				date.setText(Integer.toString(entry.getDate().get(Calendar.DATE)));
 				TextView dateOfWeek = (TextView) convertView.findViewById(R.id.event_day_of_week);
@@ -82,11 +83,11 @@ public class JournalEntryPreviewAdapter extends ArrayAdapter<JournalEntryItem> {
 
 	private void updateCache() {
 		cached_data.clear();
-		for (JournalEntryItem j : data) {
+		for (ListviewItem j : data) {
 			String key = j.getDate().getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.US) + " " +
 					Integer.toString(j.getDate().get(Calendar.DATE));
 			if (cached_data.get(key) == null) {
-				cached_data.put(key, new ArrayList<JournalEntryItem>(1));
+				cached_data.put(key, new ArrayList<ListviewItem>(1));
 			}
 			cached_data.get(key).add(j);
 		}

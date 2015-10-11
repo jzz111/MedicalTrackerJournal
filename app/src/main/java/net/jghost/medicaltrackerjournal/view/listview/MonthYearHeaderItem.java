@@ -8,11 +8,16 @@ import java.util.Locale;
 /**
  * UI model for listview journal entry header.
  */
-public class MonthYearHeaderItem implements ListviewItem, Comparable<ListviewItem> {
+public class MonthYearHeaderItem implements ListviewItem {
 	private Calendar date;
 	@Override
 	public int getViewType() {
 		return Constants.LISTVIEW_ENTRY_TYPE_HEADER;
+	}
+
+	@Override
+	public void setDate(Calendar date) {
+		this.date = date;
 	}
 
 	@Override
