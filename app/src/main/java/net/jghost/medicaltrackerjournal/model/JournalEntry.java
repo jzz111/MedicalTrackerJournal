@@ -4,12 +4,11 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
-import java.util.TimeZone;
 
 /**
  * Journal entry model
  */
-public class JournalEntry {
+public class JournalEntry implements Comparable<JournalEntry> {
     private String title;
     private String content;
     private Calendar date;
@@ -59,5 +58,10 @@ public class JournalEntry {
 
     public void setMetrics(List<Metric> metrics) {
         this.metrics = metrics;
+    }
+
+    @Override
+    public int compareTo(JournalEntry another) {
+        return date.compareTo(another.getDate());
     }
 }

@@ -2,11 +2,11 @@ package net.jghost.medicaltrackerjournal.activity;
 
 import android.app.ListActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ListView;
 
 import net.jghost.medicaltrackerjournal.R;
 import net.jghost.medicaltrackerjournal.adapter.JournalEntryPreviewAdapter;
+import net.jghost.medicaltrackerjournal.converter.JournalEntryListviewConverter;
 import net.jghost.medicaltrackerjournal.model.JournalEntry;
 
 import java.util.ArrayList;
@@ -19,6 +19,8 @@ public class MainActivity extends ListActivity {
 
     private JournalEntryPreviewAdapter adapter;
     private ListView entryList;
+
+    private JournalEntryListviewConverter journalConverter = new JournalEntryListviewConverter();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +37,8 @@ public class MainActivity extends ListActivity {
             e.setTitle("My new title");
             fakeJournalEntries.add(e);
         }
-        adapter = new JournalEntryPreviewAdapter(this, R.layout.listview_journal_entry_row, fakeJournalEntries);
+        adapter = new JournalEntryPreviewAdapter(this, R.layout.listview_journal_entry_row,
+                journalConverter.convertAll(fakeJournalEntries));
 
         entryList = (ListView) findViewById(android.R.id.list);
         entryList.setAdapter(adapter);
