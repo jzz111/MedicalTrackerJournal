@@ -31,11 +31,7 @@ public class JournalEntryItem implements ListviewItem {
 	}
 
 	public void setDetails(String details) {
-		if (details.length() > Constants.LISTVIEW_EVENT_CONTENT_MAX_LENGTH) {
-			this.details = details.substring(0, Constants.LISTVIEW_EVENT_CONTENT_MAX_LENGTH-1);
-		} else {
-			this.details = details;
-		}
+		this.details = details;
 	}
 
 	@Override
